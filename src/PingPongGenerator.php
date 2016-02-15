@@ -6,12 +6,24 @@
 				$counter = 1;
 				$array = array();
 				while ($counter <= $input) {
-					array_push($array, $counter);
-					$counter++;
-				}
-				$result = implode(",", $array);
-				return $result;
-			}
+					if ($counter % 15 == 0 )
+					{
+					array_push($array, "PINGPONG");
+					}
+					elseif ($counter % 3 == 0 )
+					{
+					array_push($array, "PING");
+					}
+					else
+					{
+						array_push($array, $counter);
 
+					}
+					$counter++;
+					$result = implode(",", $array);
+					}
+					return $result;
+
+		}
 	}
  ?>

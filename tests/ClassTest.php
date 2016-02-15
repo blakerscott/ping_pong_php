@@ -8,17 +8,30 @@
 		function test_printUpToNumber()
 		{
 		//Arrange
-		$test_PingPongGenerator = new PingPongGenerator;
-		$input = '10';
+		$test_PingPongGenerator1 = new PingPongGenerator;
+		$input = '2';
 
 		//Act
-		$result = $test_PingPongGenerator->makeNumberList($input);
+		$result = $test_PingPongGenerator1->makeNumberList($input);
 
 		//Assert
-		$this->assertEquals('1,2,3,4,5,6,7,8,9,10', $result);
+		$this->assertEquals('1,2', $result);
 		}
 
 		function test_printPingPong()
+		{
+		//Arrange
+		$test_PingPongGenerator2 = new PingPongGenerator;
+		$input = '15';
+
+		//Act
+		$result = $test_PingPongGenerator2->makeNumberList($input);
+
+		//Assert
+		$this->assertEquals('1,2,PING,4,PONG,PING,7,8,PING,PONG,11,PING,13,14,PINGPONG', $result);
+		}
+
+		function test_printPing()
 		{
 		//Arrange
 		$test_PingPongGenerator = new PingPongGenerator;
@@ -28,8 +41,23 @@
 		$result = $test_PingPongGenerator->makeNumberList($input);
 
 		//Assert
-		$this->assertEquals('1,2,3,4,5,6,7,8,9,10,11,12,13,14,PINGPONG', $result);
+		$this->assertEquals('1,2,PING,4,PONG,PING,7,8,PING,PONG,11,PING,13,14,PINGPONG', $result);
 		}
+
+		function test_printPong()
+		{
+		//Arrange
+		$test_PingPongGenerator = new PingPongGenerator;
+		$input = '15';
+
+		//Act
+		$result = $test_PingPongGenerator->makeNumberList($input);
+
+		//Assert
+		$this->assertEquals('1,2,PING,4,PONG,PING,7,8,PING,PONG,11,PING,13,14,PINGPONG', $result);
+		}
+
+
 	}
 
 ?>
